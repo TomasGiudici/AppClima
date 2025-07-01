@@ -1,0 +1,192 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(to right bottom, #822ad4, #c7541f); /* Gradiente de fondo agradable */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.hero {
+    background-color: rgb(30, 30, 30);
+    color: rgb(230, 230, 230);
+
+    padding: 50px;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+
+    width: 350px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hero:hover {
+    transform: scale(1.02);
+}
+
+#inputs {
+    height: 50px;
+    margin: 5px 0px;
+
+    display: flex;
+    gap: 10px;
+}
+
+#city-input {
+    height: calc(90% - 2px);
+    font-size: 16px;
+    border: 2px solid #505050;
+    background-color: rgb(20, 20, 20);
+    color: rgb(230, 230, 230);
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    width: 250px;
+    padding: 0px 10px;
+}
+
+#city-input::placeholder {
+    color: #505050;
+    font-style: italic;
+    transition: color 0.3s ease;
+}
+
+#city-input:focus {
+  border-color: #005ab9;
+}
+
+#search-button {
+    color: rgb(230, 230, 230);
+    background-color: rgb(20, 20, 20);
+    height: 90%;
+    border-radius: 5px;
+    border: 0px;
+    padding: 0px 12px;
+    font-weight: bold;
+}
+
+#search-button:hover {
+    background-color: rgb(10, 10, 10)
+}
+
+#error-message {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+
+    transition: max-height 0.7s ease-out, opacity 0.7s ease-out,
+                padding-top 0.7s ease-out, padding-bottom 0.7s ease-out,
+                margin-top 0.7s ease-out;
+}
+
+#error-message.show {
+    max-height: 50px;
+    opacity: 1;
+    margin: 15px;
+    padding: 10px;
+}
+
+#weather-result {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    transition: max-height 0.7s ease-out, opacity 0.7s ease-out,
+                padding-top 0.7s ease-out, padding-bottom 0.7s ease-out,
+                margin-top 0.7s ease-out;
+}
+
+#weather-result.show {
+    max-height: 1000px;
+    opacity: 1;
+    margin: 25px 10px 10px 10px;
+    padding: 25px 40px;
+
+    border-radius: 8px;
+    background-color: rgb(20, 20, 20);
+}
+
+#weather-result h2 { 
+    font-size: 3ch;
+    font-weight: bold; 
+    margin-bottom: 30px; 
+}
+
+#weather-result p { 
+    font-size: 2ch; 
+    text-transform: capitalize;
+    margin-bottom: 20px; 
+}
+
+#weather-result p:nth-of-type(1){ 
+    font-weight: bold;
+}
+
+#hourly-forecast {
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    pointer-events: none;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    transition: max-height 0.7s ease-out, opacity 0.7s ease-out,
+                padding-top 0.7s ease-out, padding-bottom 0.7s ease-out,
+                margin-top 0.7s ease-out;
+}
+
+#hourly-forecast.show {
+    max-height: 500px;
+    opacity: 1;
+    padding: 20px;
+    margin: 10px 10px 10px 25px;
+
+    color: rgb(230, 230, 230);
+    background-color: rgb(20, 20, 20);
+
+    border-radius: 8px;
+    max-width: 350px;
+    width: 100%;
+    overflow-x: auto;
+    pointer-events: auto;
+
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+
+#hourly-forecast::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+#hourly-forecast-container {
+    display: flex;
+    gap: 15px; /* Espacio entre las tarjetas, equivalente a space-x-4 */
+    padding-bottom: 0.5rem; /* Espacio inferior, equivalente a pb-2 */
+    /* Ocultar la barra de desplazamiento */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.forecastCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.forecastCard p {
+    text-align: center;
+}

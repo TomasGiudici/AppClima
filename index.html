@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación de Clima</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Fuente Inter de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Main -->
+    <div class="hero">
+        <h1>Consulta el Clima</h1>
+
+        <div id="inputs">
+            <input
+                type="text"
+                id="city-input"
+                placeholder="Ej. Buenos Aires"
+                autocomplete="off"
+            >
+            <button id="search-button">Buscar</button>
+        </div>
+
+        <!-- Mensajes de error -->
+        <div id="error-message" class="hidden" role="alert">
+            <strong class="font-bold">¡Error!</strong>
+            <span id="error-text"></span>
+        </div>
+
+        <!-- Resultados del clima -->
+        <div id="weather-result">
+            <h2 id="city-name"></h2>
+            <p id="temperature"></p>
+            <p id="description"></p>
+            <div>
+                <div>
+                    <span>&#128167;</span> <!-- Unicode para gota de agua -->
+                    <span>Humedad:</span> <span id="humidity"></span>
+                </div>
+                <div class="flex items-center">
+                    <span>&#128168;</span> <!-- Unicode para ráfaga de viento -->
+                    <span>Viento:</span> <span id="wind-speed"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pronóstico -->
+        <div id="hourly-forecast">
+            <div id="hourly-forecast-container"></div>
+        </div>
+    </div>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
